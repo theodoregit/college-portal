@@ -33,6 +33,11 @@ Route::get('/portals/student/announcement', [
     'as' => 'portals.student.announcement'
 ]);
 
+Route::get('/portals/student/courses', [
+    'uses' => 'StudentsController@courses',
+    'as' => 'portals.student.courses'
+]);
+
 Route::get('/portals/student/grade', [
     'uses' => 'StudentsController@grade',
     'as' => 'portals.student.grade'
@@ -41,6 +46,11 @@ Route::get('/portals/student/grade', [
 Route::get('/portals/student/profile', [
     'uses' => 'StudentsController@profile',
     'as' => 'portals.student.profile'
+]);
+
+Route::get('/portals/student/evaluation', [
+    'uses' => 'StudentsController@evaluation',
+    'as' => 'portals.student.evaluation'
 ]);
 
 Route::get('/portals/student/register', [

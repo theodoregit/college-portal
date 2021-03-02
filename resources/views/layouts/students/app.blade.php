@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/grade-table.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -78,22 +79,25 @@
                 <div class="col-lg-3">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="">Register</a>
+                            <a href="{{route('portals.student.index')}}">Home</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="">Grade Report</a>
+                            <a href="{{route('portals.student.register')}}">Register</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="">My Courses</a>
+                            <a href="{{route('portals.student.grade')}}">Grade Report</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="">Evaluation Form</a>
+                            <a href="{{route('portals.student.courses')}}">My Courses</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="">Report Issues</a>
+                            <a href="{{route('portals.student.evaluation')}}">Evaluation Form</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="">Announcements</a>
+                            <a href="{{route('portals.student.report')}}">Report Issues</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{route('portals.student.announcement')}}">Announcements</a>
                         </li>
                     </ul>
                 </div>
