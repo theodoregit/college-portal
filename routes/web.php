@@ -60,3 +60,61 @@ Route::get('/portals/student/report', [
     'uses' => 'StudentsController@report',
     'as' => 'portals.student.report'
 ]);
+
+
+
+//registrar routes
+Route::get('/portals/registrar/index', [
+    'uses' => 'RegistrarController@index',
+    'as' => 'portals.registrar.index'
+]);
+
+Route::get('/portals/registrar/register', [
+    'uses' => 'RegistrarController@register',
+    'as' => 'portals.registrar.register'
+]);
+
+Route::post('/portals/registrar/student-history', [
+    'uses' => 'RegistrarController@recordHistory',
+    'as' => 'portals.registrar.student-history'
+]);
+
+Route::post('/portals/registrar/create-account', [
+    'uses' => 'RegistrarController@createAccount',
+    'as' => 'portals.registrar.create-account'
+]);
+
+Route::get('/portals/registrar/account', [
+    'uses' => 'RegistrarController@account',
+    'as' => 'portals.registrar.account'
+]);
+
+Route::get('/portals/registrar/manage', [
+    'uses' => 'RegistrarController@manage',
+    'as' => 'portals.registrar.manage'
+]);
+
+Route::get('/portals/registrar/grades', [
+    'uses' => 'RegistrarController@grade',
+    'as' => 'portals.registrar.grades'
+]);
+
+Route::get('/portals/registrar/evaluations', [
+    'uses' => 'RegistrarController@evaluation',
+    'as' => 'portals.registrar.evaluations'
+]);
+
+Route::get('/portals/registrar/announcement', [
+    'uses' => 'RegistrarController@announcement',
+    'as' => 'portals.registrar.announcement'
+]);
+
+Route::get('/portals/registrar/students', [
+    'uses' => 'RegistrarController@students',
+    'as' => 'portals.registrar.students'
+]);
+
+Route::get('/portals/registrar/student/{id}', [
+    'uses' => 'RegistrarController@student',
+    'as' => 'portals.registrar.student'
+]);
