@@ -80,8 +80,8 @@ class InstructorsController extends Controller
     {
         //edit instructors profile by the instructor
         //profile is the table of the instructor
-        // $profile = profile::find($id);
-        // view('portals.instructor.edit')->with('profiles', $profile);
+        $profile = profile::find($id);
+        view('portals.instructor.edit')->with('profiles', $profile);
     }
 
     /**
@@ -94,16 +94,16 @@ class InstructorsController extends Controller
     public function update(Request $request, $id)
     {
         //
-        // $profile = profile::find($id);
+        $profile = profile::find($id);
 
-        // $profile->fullname = $request->fullname;
-        //     $profile->email = $request->email;
-        //     $profile->mobile=$request->mobile;
-        //     $profile->address=$request->address;
-        //     $profile->instructing_course=$request->instructing_course;
+        $profile->fullname = $request->fullname;
+            $profile->email = $request->email;
+            $profile->mobile=$request->mobile;
+            $profile->address=$request->address;
+            $profile->instructing_course=$request->instructing_course;
 
-        // $profile->save();
-        // return redirect()->route('instructor.profile');
+        $profile->save();
+        return redirect()->route('instructor.profile');
     }
 
     /**

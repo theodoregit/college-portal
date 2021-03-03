@@ -6,8 +6,8 @@
         </div>
         <div class="panel panel-body">
 
-            <form action="{{route('instructor.grade.update', ['id'=>$grade])}}" method="POST">
-                
+            <form action="{{route('instructor.grade.update', ['id'=>$grade->id])}}" method="POST">
+                {{csrf_field()}}
                 <div class="form-group">
                     <label for="name">{{$grades->studentname}} </label>
                 </div>

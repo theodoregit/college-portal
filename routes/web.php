@@ -64,7 +64,6 @@ Route::get('/portals/student/report', [
 ]);
 
 
-
 //registrar routes
 Route::get('/portals/registrar/index', [
     'uses' => 'RegistrarController@index',
@@ -121,38 +120,57 @@ Route::get('/portals/registrar/student/{id}', [
     'as' => 'portals.registrar.student'
 ]);
 
+Route::get('/portals/registrar/edit/{id}', [
+    'uses' => 'RegistrarController@editHistory',
+    'as' => 'portals.registrar.edit'
+]);
+
+Route::post('/portals/registrar/student-history-update/{id}', [
+    'uses' => 'RegistrarController@updateHistory',
+    'as' => 'portals.registrar.student-history-update'
+]);
+
+Route::get('/portals/registrar/account-create/{id}', [
+    'uses' => 'RegistrarController@createAccount',
+    'as' => 'portals.registrar.account-create'
+]);
 
 //instructor routes
 
 //instructor's profile view route
 Route::get('/portals/instructor/profile', [
     'uses' => 'InstructorsController@index',
-    'as' => 'portals.instructor.profile'
+    'as' => 'instructor.profile'
 ]);
 //instructor's profile editing page route
-// Route::get('/portals/instructor/profile/edit/{id}', [
-//     'uses' => 'InstructorsController@edit',
-//     'as' => 'instructor.edit'
-// ]);
-// Route::post('/portals/instructor/profile/update/{id}', [
-//     'uses' => 'InstructorsController@update',
-//     'as' => 'instructor.update'
-// ]);
-// //grade submit page by the instructor
-// Route::get('/portals/instructor/grade/create', [
-//     'uses' => 'InstructorsGradeController@create',
-//     'as' => 'instructor.grade.create'
-// ]);
-// //fiiled grade summited by this route
-// Route::get('/portals/instructor/grade/store', [
-//     'uses' => 'InstructorsGradeController@store',
-//     'as' => 'instructor.grade.store'
-// ]);
-// Route::get('/portals/instructor/grade/edit/{id}', [
-//     'uses' => 'InstructorsGradeController@edit',
-//     'as' => 'instructor.grade.edit'
-// ]);
-// Route::get('/portals/instructor/grade/update/{id}', [
-//     'uses' => 'InstructorsGradeController@edit',
-//     'as' => 'instructor.grade.update'
-// ]);
+Route::get('/portals/instructor/profile/edit/{id}', [
+    'uses' => 'InstructorsController@edit',
+    'as' => 'instructor.edit'
+]);
+Route::post('/portals/instructor/profile/update/{id}', [
+    'uses' => 'InstructorsController@update',
+    'as' => 'instructor.update'
+]);
+
+//grade submit page by the instructor
+Route::get('/portals/instructor/grade/create', [
+    'uses' => 'InstructorsGradeController@create',
+    'as' => 'instructor.grade.create'
+]);
+//fiiled grade summited by this route
+Route::get('/portals/instructor/grade/store', [
+    'uses' => 'InstructorsGradeController@store',
+    'as' => 'instructor.grade.store'
+]);
+Route::get('/portals/instructor/grade/edit/{id}', [
+    'uses' => 'InstructorsGradeController@edit',
+    'as' => 'instructor.grade.edit'
+]);
+Route::get('/portals/instructor/grade/update/{id}', [
+    'uses' => 'InstructorsGradeController@update',
+    'as' => 'instructor.grade.update'
+]);
+
+
+//create announcement for the students by the registrar
+

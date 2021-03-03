@@ -10,7 +10,7 @@
 
     <div class="panel panel-body">
 
-                <form action="{{route('portals.instructor.profile.update', ['id'=>$profile->id ])}} " method="POST">
+                <form action="{{route('instructor.update', ['id'=>$profile->id ])}} " method="POST">
                     {{ csrf_field() }}
 
                     <div class="form-group">

@@ -7,7 +7,7 @@
         <div class="panel panel-body">
 
             <form action="{{route('instructor.grade.store')}}" method="POST">
-                
+                {{csrf_field()}}
                 <div class="form-group">
                     <label for="name">{{$grades->studentname}} </label>
                 </div>

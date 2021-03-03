@@ -13,4 +13,7 @@ class grade extends Model
     public function Student(){
         return $this->hasMany('App\Student');
     }
+    public function tags(){
+        return $this->belongsToMany('App\Tag');
+    }
 }
