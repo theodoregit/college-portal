@@ -31,13 +31,13 @@
                                     <label for="fullname">Full Name</label>
                                     <div class="row">
                                         <div class="col-sm-4">
-                                            <input type="text" name="firstname" placeholder="first name" class="form-control">
+                                            <input type="text" name="firstname" value="{{old('firstname')}}" placeholder="first name" class="form-control">
                                         </div>
                                         <div class="col-sm-4">
-                                            <input type="text" name="fathername" placeholder="father's name" class="form-control">
+                                            <input type="text" name="fathername" value="{{old('fathername')}}" placeholder="father's name" class="form-control">
                                         </div>
                                         <div class="col-sm-4">
-                                            <input type="text" name="gfathername" placeholder="g.father's name" class="form-control">
+                                            <input type="text" name="gfathername" value="{{old('gfathername')}}" placeholder="g.father's name" class="form-control">
                                         </div>
                                     </div>                                    
                                 </div>
@@ -65,37 +65,37 @@
                                 <label for="desc1">Current Residential Address</label>
                                 <div class="row">
                                     <div class="col-sm-4">
-                                        <input type="text" placeholder="house no" name="housenumber" class="form-control">
+                                        <input type="text" placeholder="house no" value="{{old('housenumber')}}" name="housenumber" class="form-control">
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="text" placeholder="kebele" name="kebele" class="form-control">
+                                        <input type="text" placeholder="kebele" value="{{old('kebele')}}" name="kebele" class="form-control">
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="text" placeholder="town" name="town" class="form-control">
+                                        <input type="text" placeholder="town" value="{{old('town')}}" name="town" class="form-control">
                                     </div>
                                 </div><br>
                                 <div class="row">
                                     <div class="col-sm-4">
-                                        <input type="text" placeholder="woreda" name="woreda" class="form-control">
+                                        <input type="text" placeholder="woreda" value="{{old('woreda')}}" name="woreda" class="form-control">
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="text" placeholder="zone" name="zone" class="form-control">
+                                        <input type="text" placeholder="zone" value="{{old('woreda')}}" name="zone" class="form-control">
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="text" placeholder="region" name="region" class="form-control">
+                                        <input type="text" placeholder="region" value="{{old('region')}}" name="region" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="desc3">Date of Birth</label>
-                                    <input type="date" name="dob" class="form-control">
+                                    <input type="date" name="dob" value="{{old('dob')}}" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="desc3">Place of Birth</label>
-                                    <input type="text" name="birthplace" class="form-control">
+                                    <input type="text" name="birthplace" value="{{old('birthplace')}}" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="image">Photo(3x4)</label>
-                                    <input type="file" name="image" class="form-control">
+                                    <input type="file" name="image" value="{{old('image')}}" class="form-control">
                                 </div>
                             </div>
                             
