@@ -9,6 +9,7 @@ class StudentAccount extends Model
     protected $fillable = [
         'fullname',
         'idnumber',
+        'department',
         'password',
     ];
 }

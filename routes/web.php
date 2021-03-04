@@ -130,9 +130,14 @@ Route::post('/portals/registrar/student-history-update/{id}', [
     'as' => 'portals.registrar.student-history-update'
 ]);
 
-Route::get('/portals/registrar/account-create/{id}', [
+Route::post('/portals/registrar/account-create/{id}', [
     'uses' => 'RegistrarController@createAccount',
     'as' => 'portals.registrar.account-create'
+]);
+
+Route::post('/portals/registrar/announcement', [
+    'uses' => 'RegistrarController@createAnnouncement',
+    'as' => 'portals.registrar.announcement'
 ]);
 
 //instructor routes

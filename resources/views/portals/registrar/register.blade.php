@@ -38,6 +38,7 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <input type="text" name="gfathername" value="{{old('gfathername')}}" placeholder="g.father's name" class="form-control">
+                                        
                                         </div>
                                     </div>                                    
                                 </div>
@@ -47,7 +48,9 @@
                                         <option value=""></option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
-                                    </select>
+                                    </select>  
+                                    <input type="text" style='display:none' type="hidden" name="currentyear" value="<?php echo date("Y"); ?>" placeholder="g.father's name" class="form-control">
+                                                                          
                                 </div>
                                 <div class="form-group">
                                     <label for="dis">Disability</label>

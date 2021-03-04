@@ -100,7 +100,7 @@
                             <a href="{{route('portals.registrar.evaluations')}}">Evaluations</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="{{route('portals.registrar.announcement')}}">Create Announcements</a>
+                            <a href="{{route('portals.registrar.announcement')}}">Announcements</a>
                         </li>
                     </ul>
                 </div>

@@ -26,20 +26,22 @@
                                             <th scope="col">No</th>
                                             <th scope="col">Full Name</th>
                                             <th scope="col">ID Number</th> 
-                                            <th scope="col">Password</th>
+                                            <th scope="col">Department</th>
                                             <th scope="col"></th>
                                             <th scope="col"></th>                                 
                                         </tr>
                                     </thead>
                                     <tbody>                                    
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Abebe Alemu Zerihun</td>
-                                            <td>ATR/4025/08</td>
-                                            <td>123456</td>
-                                            <td><a href="" class="btn btn-primary">Edit</a></td>
-                                            <td><a href="" class="btn btn-danger">Delete</a></td>
-                                        </tr>                                              
+                                        @foreach($account as $account)                                    
+                                            <tr>
+                                                <th scope="row">{{$account->id}}</th>
+                                                <td>{{$account->fullname}}</td>
+                                                <td>{{$account->idnumber}}</td>
+                                                <td>{{$account->department}}</td>
+                                                <td><a href="" class="btn btn-primary">Reset</a></td>
+                                                <td><a href="" class="btn btn-danger">Delete</a></td>
+                                            </tr>      
+                                        @endforeach                                               
                                     </tbody>
                                 </table>                        
                             </div>
@@ -52,7 +54,7 @@
                                             <th scope="col">No</th>
                                             <th scope="col">Full Name</th>
                                             <th scope="col">Email</th> 
-                                            <th scope="col">Password</th>
+                                            <th scope="col">Department</th>
                                             <th scope="col"></th>
                                             <th scope="col"></th>                                 
                                         </tr>

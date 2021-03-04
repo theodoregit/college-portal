@@ -12,6 +12,7 @@
                                 <tr>
                                     <th scope="col">No</th>
                                     <th scope="col">Full Name</th>
+                                    <th scope="col">ID Number</th> 
                                     <th scope="col">Admission</th> 
                                     <th scope="col"></th>                                    
                                 </tr>
@@ -21,6 +22,7 @@
                                 <tr>
                                     <th scope="row">{{$student->id}}</th>
                                     <td>{{$student->fullname}}</td>
+                                    <td>{{$student->idnumber}}</td>
                                     <td>{{$student->admission}}</td>
                                     <td><a href="{{route('portals.registrar.student', ['id' => $student->id])}}">See More ..</a></td>
                                 </tr>   

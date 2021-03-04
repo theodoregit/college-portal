@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Session;
 use App\StudentsHistory;
+use App\StudentAccount;
+use App\Announcement;
 
 class RegistrarController extends Controller
 {
@@ -42,9 +44,10 @@ class RegistrarController extends Controller
         $image->move('uploads/studentsphoto', $image_upload);
 
         //generate id number
-        // $idnumber = "D".$str($request->department).$str($request->admission)."/"."".$substr($request->dob, -2);
-        $idnumber = "D".$request->department[0].$request->admission[0]. "/".mt_rand(1000, 9999)."/". $request->created_at[2].$request->created_at[3];
+        $idnumber = "D".$request->department[0].$request->admission[0]. "/".mt_rand(1000, 9999)."/". $request->currentyear[2]. $request->currentyear[3];
         // echo $idnumber;
+        $password = $request->firstname . $idnumber[4] . $idnumber[5] . $idnumber[6] . $idnumber[7];
+        // echo $password;
 
         //inserting into the database
         $student = StudentsHistory::create([
@@ -66,18 +69,46 @@ class RegistrarController extends Controller
             'image' => 'uploads/studentsphoto/' . $image_upload,
         ]);
         
-        Session::flash('success', 'Room added successfully!');
+        $account = StudentAccount::create([
+            'fullname' => $request->firstname . ' ' . $request->fathername . ' ' . $request->gfathername,
+            'department' => $request->department,
+            'idnumber' => $idnumber,
+            'password' => bcrypt($password),
+        ]);
+        
+        Session::flash('success', '');
         
         return redirect()->back();
     }
     public function account(){
         return view('portals.registrar.account');
     }
-    public function createAccount($id){
+    public function createAccount(Request $request, $id){
+        $this->validate($request, [
+            'fullname' => 'required|max:255',
+            'department' => 'required',
+            'idnumber' => 'required',
+            'password' => 'required|max:255',            
+        ]);
+        $account = StudentAccount::create([
+            'fullname' => $request->fullname,
+            'department' => $request->department,
+            'idnumber' => $request->idnumber,
+            'password' => bcrypt($request['password']),
+        ]);
         
+        return redirect()->back();
+
+        // return User::create([
+        //     'fullname' => $id['idnumber'],
+        //     'department' => $id['idnumber'],
+        //     'idnumber' => $id['idnumber'],
+        //     'password' => bcrypt($id['password']),
+        // ]);
     }
     public function manage(){
-        return view('portals.registrar.manage');
+        return view('portals.registrar.manage')
+                    ->with('account', StudentAccount::all());
     }
     public function grade(){
         return view('portals.registrar.grades');
@@ -86,15 +117,34 @@ class RegistrarController extends Controller
         return view('portals.registrar.evaluations');
     }
     public function announcement(){
-        return view('portals.registrar.announcement');
+        return view('portals.registrar.announcement')
+                    ->with('announcements', Announcement::all());
+    }
+    public function Createannouncement(Request $request){
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'body' => 'required',           
+        ]);
+        $announcement = Announcement::create([
+            'title' => $request->title,
+            'body' => $request->body,
+        ]);
+        
+        return redirect()->back();
     }
     public function students(){
         return view('portals.registrar.students')
                     ->with('students', StudentsHistory::all());
     }
     public function student($id){
+        // $hasAccount = StudentAccount::find(StudentsHistory::find($id));
+        // $idnumber = StudentAccount::where('idnumber', StudentsHistory::find($id)->pluck('fullname'))->first();
+        // echo "hello ". StudentAccount::find($id)->pluck('idnumber');
+        
+        $random_password = mt_rand(1000, 9000);
         return view('portals.registrar.student')
-                    ->with('history', StudentsHistory::find($id));
+                    ->with('history', StudentsHistory::find($id))
+                    ->with('password', $random_password);
     }
     public function editHistory($id){        
         return view('portals.registrar.edit')

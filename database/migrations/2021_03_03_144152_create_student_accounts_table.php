@@ -17,6 +17,7 @@ class CreateStudentAccountsTable extends Migration
             $table->increments('id');
             $table->string('fullname');
             $table->string('idnumber');
+            $table->string('department');
             $table->string('password');
             $table->timestamps();
         });
