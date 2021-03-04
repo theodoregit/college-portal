@@ -78,30 +78,15 @@
                 <?php //@if(Auth::check())?>
                 <div class="col-lg-3">
                     <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <a href="{{route('portals.registrar.index')}}">Home</a>
+                        <li class="list-group-item">
+                            <a href="{{route('portals.instructor.index')}}">Home</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="{{route('portals.registrar.register')}}">Register Students</a>
+                            <a href="{{route('portals.instructor.profile')}}">Profile</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="{{route('portals.registrar.students')}}">Students List</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="{{route('portals.registrar.account')}}">Create Account</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="{{route('portals.registrar.manage')}}">Manage Accounts</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="{{route('portals.registrar.grades')}}">Grade Reports</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="{{route('portals.registrar.evaluations')}}">Evaluations</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="{{route('portals.registrar.announcement')}}">Create Announcements</a>
-                        </li> -->
+                            <a href="{{route('portals.instructor.grade')}}">Grade</a>
+                        </li>                        
                     </ul>
                 </div>
                 <?php //@endif ?>

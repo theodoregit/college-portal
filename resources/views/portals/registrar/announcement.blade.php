@@ -55,13 +55,13 @@
                                             <th scope="col"></th>
                                             <th scope="col"></th>                                 
                                         </tr>
-                                    </thead>
+                                    </thead>                                    
                                     <tbody> 
                                         @foreach($announcements as $announcement)                                   
                                             <tr>
                                                 <th scope="row">{{$announcement->id}}</th>
                                                 <td>{{$announcement->title}}</td>
-                                                <td>{{$announcement->body}}</td>
+                                                <td>{{substr($announcement->body, 0, 95)}}...</td>
                                                 <td>{{$announcement->created_at}}</td>
                                                 <td><a href="" class="btn btn-primary">Repost</a></td>
                                                 <td><a href="" class="btn btn-danger">Delete Post</a></td>
