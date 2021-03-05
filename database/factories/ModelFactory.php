@@ -22,3 +22,14 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+//model factory for courses
+$factory->define(App\ComputerScience::class, function (Faker\Generator $faker){
+    return [
+        'coursename' => $faker->word,
+        'coursenumber' => $faker->word,
+        'year' => $faker->numberBetween($min = 1, $max = 7),
+        'semester' => $faker->numberBetween($min = 1, $max = 3),
+        'credithr' => $faker->numberBetween($min = 1, $max = 6)
+    ];
+});

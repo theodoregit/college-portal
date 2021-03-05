@@ -6,8 +6,8 @@
                 <div class="panel-heading">Grade Report</div>                    
                 <div class="panel-body">
                     <div style="background-color: #f5f8fa">   
-                        <p><u><strong>Year: 3</strong></u></p>
-                        <p><u><strong>Semester: II</strong></u></p>          
+                        <p><u><strong>Year: {{$year}}</strong></u></p>
+                        <p><u><strong>Semester: {{$semester}}</strong></u></p>          
                         <table class="table">
                             <thead class="thead-dark">
                                 <tr>
@@ -22,137 +22,24 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($grades as $grade)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Course 1</td>
-                                    <td>32</td>
-                                    <td>15</td>
-                                    <td>30</td>
-                                    <td>77</td>
-                                    <td>5</td>
-                                    <td>B+</td>
+                                    <th scope="row">{{$grade->id}}</th>
+                                    <td>{{$grade->coursename}}</td>
+                                    <td>{{$grade->assessment}}</td>
+                                    <td>{{$grade->project}}</td>
+                                    <td>{{$grade->finalexam}}</td>
+                                    <td>{{$grade->sum}}</td>
+                                    <td>0</td>
+                                    <td>{{$grade->grade}}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Course 1</td>
-                                    <td>32</td>
-                                    <td>15</td>
-                                    <td>30</td>
-                                    <td>77</td>
-                                    <td>5</td>
-                                    <td>B+</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Course 1</td>
-                                    <td>32</td>
-                                    <td>15</td>
-                                    <td>30</td>
-                                    <td>77</td>
-                                    <td>5</td>
-                                    <td>B+</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Course 1</td>
-                                    <td>32</td>
-                                    <td>15</td>
-                                    <td>30</td>
-                                    <td>77</td>
-                                    <td>5</td>
-                                    <td>B+</td>
-                                </tr>					
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Course 1</td>
-                                    <td>32</td>
-                                    <td>15</td>
-                                    <td>30</td>
-                                    <td>77</td>
-                                    <td>5</td>
-                                    <td>B+</td>
-                                </tr>                            
+                                @endforeach                           
                             </tbody>
                         </table>
                         <div style="margin-left=100%">
-                            <p>Semester GPA: <strong>3.5</strong></p>
-                            <p>Comulative GPA: <strong>3.15</strong></p>
-                            <p>Status GPA: <strong>Promoted</strong></p>
-                        </div>
-                    </div>
-                    <div style="background-color: #f5f8fa">   
-                        <p><u><strong>Year: 3</strong></u></p>
-                        <p><u><strong>Semester: II</strong></u></p>          
-                        <table class="table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">No</th>
-                                    <th scope="col">Course</th>
-                                    <th scope="col">Assessment</th>
-                                    <th scope="col">Project</th>
-                                    <th scope="col">Final Exam</th>
-                                    <th scope="col">Sum</th>
-                                    <th scope="col">Credit Hour</th>
-                                    <th scope="col">Grade</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Course 1</td>
-                                    <td>32</td>
-                                    <td>15</td>
-                                    <td>30</td>
-                                    <td>77</td>
-                                    <td>5</td>
-                                    <td>B+</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Course 1</td>
-                                    <td>32</td>
-                                    <td>15</td>
-                                    <td>30</td>
-                                    <td>77</td>
-                                    <td>5</td>
-                                    <td>B+</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Course 1</td>
-                                    <td>32</td>
-                                    <td>15</td>
-                                    <td>30</td>
-                                    <td>77</td>
-                                    <td>5</td>
-                                    <td>B+</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Course 1</td>
-                                    <td>32</td>
-                                    <td>15</td>
-                                    <td>30</td>
-                                    <td>77</td>
-                                    <td>5</td>
-                                    <td>B+</td>
-                                </tr>					
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Course 1</td>
-                                    <td>32</td>
-                                    <td>15</td>
-                                    <td>30</td>
-                                    <td>77</td>
-                                    <td>5</td>
-                                    <td>B+</td>
-                                </tr>                            
-                            </tbody>
-                        </table>
-                        <div style="margin-left=100%">
-                            <p>Semester GPA: <strong>3.5</strong></p>
-                            <p>Comulative GPA: <strong>3.15</strong></p>
-                            <p>Status GPA: <strong>Promoted</strong></p>
+                            <p>Semester GPA: <strong></strong></p>
+                            <p>Comulative GPA: <strong></strong></p>
+                            <p>Status GPA: <strong></strong></p>
                         </div>
                     </div>
                 </div>

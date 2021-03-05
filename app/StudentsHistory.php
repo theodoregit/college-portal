@@ -21,6 +21,7 @@ class StudentsHistory extends Model
         'region',
         'department',
         'year',
+        'semester',
         'idnumber',
         'image'
     ];

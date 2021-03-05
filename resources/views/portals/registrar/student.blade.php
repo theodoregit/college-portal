@@ -18,8 +18,8 @@
                             <div class="col-md-3">
                                 <p><strong>Sex</strong></p>
                                 <p>{{$history->sex}}</p><hr>
-                                <p><strong>Year</strong></p>
-                                <p>{{$history->year}}</p>
+                                <p><strong>Year: </strong>{{$history->year}}</p>
+                                <p><strong>Semester: </strong>{{$history->semester}}</p>
                             </div>
                             <div class="col-md-3">
                                 <p><strong>Full Name</strong></p>

@@ -5,21 +5,13 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Latest Announcements</div>                    
                 <div class="panel-body">
-                    <div style="background-color: #f5f8fa">   
-                        <h3><strong>Title</strong></h3>
-                        <p><strong>Posted Date: 10/5/2021</strong></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eveniet maiores impedit doloribus consequuntur, molestiae a at, cumque ullam, natus unde quos debitis sed mollitia. Natus nulla maiores minima omnis.</p>
-                    </div> 
-                    <div style="background-color: #f5f8fa">   
-                        <h3><strong>Title</strong></h3>
-                        <p><strong>Posted Date: 10/5/2021</strong></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eveniet maiores impedit doloribus consequuntur, molestiae a at, cumque ullam, natus unde quos debitis sed mollitia. Natus nulla maiores minima omnis.</p>
-                    </div> 
-                    <div style="background-color: #f5f8fa">   
-                        <h3><strong>Title</strong></h3>
-                        <p><strong>Posted Date: 10/5/2021</strong></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eveniet maiores impedit doloribus consequuntur, molestiae a at, cumque ullam, natus unde quos debitis sed mollitia. Natus nulla maiores minima omnis.</p>
-                    </div>             
+                    @foreach($posts as $post)
+                        <div style="background-color: #f5f8fa">   
+                            <h3><strong>{{$post->title}}</strong></h3>
+                            <p><strong>Posted Date: {{$post->created_at}}</strong></p>
+                            <p>{{$post->body}}</p>
+                        </div> 
+                    @endforeach                                
                 </div>
             </div>
 

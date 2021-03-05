@@ -38,7 +38,7 @@ Route::get('/portals/student/courses', [
     'as' => 'portals.student.courses'
 ]);
 
-Route::get('/portals/student/grade', [
+Route::get('/portals/student/grade/{id}', [
     'uses' => 'StudentsController@grade',
     'as' => 'portals.student.grade'
 ]);
@@ -53,9 +53,13 @@ Route::get('/portals/student/evaluation', [
     'as' => 'portals.student.evaluation'
 ]);
 
-Route::get('/portals/student/register', [
+Route::get('/portals/student/register/{id}', [
     'uses' => 'StudentsController@register',
     'as' => 'portals.student.register'
+]);
+Route::post('/portals/student/register-course/{id}', [
+    'uses' => 'StudentsController@registerCourse',
+    'as' => 'portals.student.register-course'
 ]);
 
 Route::get('/portals/student/report', [

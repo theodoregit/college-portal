@@ -53,30 +53,17 @@
                                                                           
                                 </div>
                                 <div class="form-group">
-                                    <label for="dis">Disability</label>
-                                    <select name="disability" id="" class="form-control">
+                                    <label for="dept">Department</label>
+                                    <select name="department" id="" class="form-control">
                                         <option value=""></option>
-                                        <option value="None">None</option>
-                                        <option value="Hearing">Hearing</option>
-                                        <option value="Sight">Sight</option>
-                                        <option value="Handicap">Handicap</option>
-                                        <option value="Other">Other</option>
+                                        <option value="Computer Science">Computer Science</option>
+                                        <option value="Accounting and Finance">Accounting and Finance</option>
+                                        <option value="Economics">Economics</option>
+                                        <option value="Nursing">Nursing</option>
+                                        <option value="Pharmacy">Pharmacy</option>
                                     </select>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">                                        
-                                        <div class="form-group">
-                                            <label for="dept">Department</label>
-                                            <select name="department" id="" class="form-control">
-                                                <option value=""></option>
-                                                <option value="Computer Science">Computer Science</option>
-                                                <option value="Accounting and Finance">Accounting and Finance</option>
-                                                <option value="Economics">Economics</option>
-                                                <option value="Nursing">Nursing</option>
-                                                <option value="Pharmacy">Pharmacy</option>
-                                            </select>
-                                        </div>
-                                    </div>
                                     <div class="col-md-6">                                        
                                         <div class="form-group">
                                             <label for="year">Year</label>
@@ -89,6 +76,17 @@
                                                 <option value="5">5</option>
                                                 <option value="4">6</option>
                                                 <option value="5">7</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">                                        
+                                        <div class="form-group">
+                                            <label for="semester">Semester</label>
+                                            <select name="semester" id="" class="form-control">
+                                                <option value=""></option>
+                                                <option value="1">I</option>
+                                                <option value="2">II</option>
+                                                <option value="3">III</option>                                                
                                             </select>
                                         </div>
                                     </div>
@@ -121,6 +119,17 @@
                                 <div class="form-group">
                                     <label for="desc3">Date of Birth</label>
                                     <input type="date" name="dob" value="{{old('dob')}}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dis">Disability</label>
+                                    <select name="disability" id="" class="form-control">
+                                        <option value=""></option>
+                                        <option value="None">None</option>
+                                        <option value="Hearing">Hearing</option>
+                                        <option value="Sight">Sight</option>
+                                        <option value="Handicap">Handicap</option>
+                                        <option value="Other">Other</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="desc3">Place of Birth</label>

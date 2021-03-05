@@ -36,6 +36,7 @@ class RegistrarController extends Controller
             'birthplace' => 'required|max:255',
             'department' => 'required|max:255',
             'year' => 'required|max:255',
+            'semester' => 'required|max:255',
             'image' => 'required|image',
         ]);
         //saving image file
@@ -64,6 +65,7 @@ class RegistrarController extends Controller
             'dob' => $request->dob,
             'department' => $request->department,
             'year' => $request->year,
+            'semester' => $request->semester,
             'birthplace' => $request->birthplace,
             'idnumber' => $idnumber,
             'image' => 'uploads/studentsphoto/' . $image_upload,
@@ -159,6 +161,7 @@ class RegistrarController extends Controller
             'birthplace' => 'required|max:255',
             'department' => 'required|max:255',
             'year' => 'required|max:255',
+            'semester' => 'required|max:255',
             'image' => 'required|image',
             'fullname' => 'required|max:255',
             'housenumber' => 'required|max:255',
@@ -192,6 +195,7 @@ class RegistrarController extends Controller
         $student->dob = $request->dob;
         $student->birthplace = $request->birthplace;
         $student->year = $request->year;
+        $student->semester = $request->semester;
         $student->year = $request->idnumber;
         $student->image = 'uploads/studentsphoto/' . $image_upload;
         $student->save();

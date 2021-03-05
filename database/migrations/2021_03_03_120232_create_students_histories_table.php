@@ -30,6 +30,7 @@ class CreateStudentsHistoriesTable extends Migration
             $table->string('image');
             $table->string('department');
             $table->string('year');
+            $table->string('semester');
             $table->string('idnumber');
             $table->timestamps();
         });
