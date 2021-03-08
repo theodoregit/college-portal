@@ -82,10 +82,10 @@
                             <a href="{{route('portals.student.index')}}">Home</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="{{route('portals.student.register', ['id'=>1])}}">Register</a>
+                            <a href="{{route('portals.student.register', ['id'=>$id])}}">Register</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="{{route('portals.student.grade', ['id'=>1])}}">Grade Report</a>
+                            <a href="{{route('portals.student.grade', ['id'=>$id])}}">Grade Report</a>
                         </li>
                         <li class="list-group-item">
                             <a href="{{route('portals.student.courses')}}">My Courses</a>

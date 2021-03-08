@@ -6,8 +6,9 @@
                 <div class="panel-heading">Course Registration</div>
                     
                 <div class="panel-body">
+                    @if($hasRegistered === null))
                     <form action="{{route('portals.student.register-course', ['id'=>$id])}}" method="post">
-                    {{csrf_field()}}
+                        {{csrf_field()}}
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -48,6 +49,9 @@
                             </div>
                         </div>
                     </form>
+                    @else
+                    <p>You have already registered for Year: {{$year}}, Semester: {{$semester}}</p>
+                    @endif
                 </div>
             </div>
 
