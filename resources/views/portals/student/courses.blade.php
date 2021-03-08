@@ -3,7 +3,7 @@
 @section('content')
        
             <div class="panel panel-default">
-                <div class="panel-heading">Latest Announcements</div>                    
+                <div class="panel-heading">My Courses</div>                    
                 <div class="panel-body">
                     <table class="table">
                         <thead class="thead-dark">

@@ -97,16 +97,16 @@ class StudentsController extends Controller
         $idno = $idnumber;
         $id = preg_replace("/[^a-zA-Z0-9\s]/", "", $id);
         $registered = AdmittedStudents::where('idnumber', '=', $id)->first();
-        // echo $registered;
-        $department = StudentsHistory::where('idnumber', $idnumber)->pluck('department');
+        // echo $idno;
+        $department = StudentsHistory::where('idnumber', $idno)->pluck('department');
         $department = preg_replace("/[^a-zA-Z0-9\s]/", "", $department);
-        $year = StudentsHistory::where('idnumber', $id)->pluck('year');
+        $year = StudentsHistory::where('idnumber', $idno)->pluck('year');
         $year = preg_replace("/[^a-zA-Z0-9\s]/", "", $year);
-        $semester = StudentsHistory::where('idnumber', $id)->pluck('semester');
+        $semester = StudentsHistory::where('idnumber', $idno)->pluck('semester');
         $semester = preg_replace("/[^a-zA-Z0-9\s]/", "", $semester);
         $id = StudentsHistory::where('idnumber', $idnumber)->pluck('id');
         $id = preg_replace("/[^a-zA-Z0-9\s]/", "", $id);
-
+        // echo $department;
         
         switch ($department) {
             case 'Computer Science':
@@ -129,7 +129,7 @@ class StudentsController extends Controller
                 //
                 break;
         }
-        // echo $dept;
+        // echo $year;
 
         $course = DB::table($dept)
                         ->where('year', '=', $year)
@@ -145,11 +145,16 @@ class StudentsController extends Controller
     }
 
     public function registerCourse(Request $request, $id){
+        $idnumber = Auth::user()->idnumber;
+        $id = $idnumber;
+        $idno = $idnumber;
+        $id = preg_replace("/[^a-zA-Z0-9\s]/", "", $id);
+
         $studentname = StudentsHistory::where('id', $id)->pluck('fullname');
         $studentname = preg_replace("/[^a-zA-Z0-9\s]/", "", $studentname);
         $idnumber = StudentsHistory::where('id', $id)->pluck('idnumber');
         $idnumber = preg_replace("/[^a-zA-Z0-9\s]/", "", $idnumber);
-        $department = StudentsHistory::where('idnumber', $idnumber)->pluck('department');
+        $department = StudentsHistory::where('idnumber', $idno)->pluck('department');
         $department = preg_replace("/[^a-zA-Z0-9\s]/", "", $department);
 
         switch ($department) {
@@ -159,7 +164,7 @@ class StudentsController extends Controller
             case 'Accounting and Finance':
                 //
                 break;
-            case 'Economics':
+            case 'economics':
                 $dept = 'economics';
                 break;
             case 'Nursing':
@@ -191,7 +196,7 @@ class StudentsController extends Controller
                         ->where('year', '=', $year)
                         ->where('semester', '=', $semester)->get();
         return view('portals.student.courses')
-                    ->with('courses', $courses);
+                    ->with('courses', $course);
 
     }
 

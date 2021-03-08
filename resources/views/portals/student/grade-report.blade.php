@@ -13,7 +13,7 @@
                         <table class="table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">No</th>
+                                    <!-- <th scope="col">No</th> -->
                                     <th scope="col">Course</th>
                                     <th scope="col">Assessment</th>
                                     <th scope="col">Project</th>
@@ -26,7 +26,7 @@
                             <tbody>
                                 @foreach($grades as $grade)
                                 <tr>
-                                    <th scope="row">{{$grade->id}}</th>
+                                    <!-- <th scope="row">{{$grade->id}}</th> -->
                                     <td>{{$grade->coursename}}</td>
                                     <td>{{$grade->assessment}}</td>
                                     <td>{{$grade->project}}</td>
