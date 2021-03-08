@@ -45,6 +45,46 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin',
+        ],
+
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admin',
+        ],
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'student',
+        ],
+
+        'student-api' => [
+            'driver' => 'token',
+            'provider' => 'student',
+        ],
+
+        
+        'registrar' => [
+            'driver' => 'session',
+            'provider' => 'registrar',
+        ],
+
+        'registrar-api' => [
+            'driver' => 'token',
+            'provider' => 'registrar',
+        ],
+
+        'instructor' => [
+            'driver' => 'session',
+            'provider' => 'instructor',
+        ],
+
+        'instructor-api' => [
+            'driver' => 'token',
+            'provider' => 'instructor',
+        ],
     ],
 
     /*
@@ -68,6 +108,26 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'admin' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+        ],
+
+        'student' => [
+            'driver' => 'eloquent',
+            'model' => App\Student::class,
+        ],
+
+        'registrar' => [
+            'driver' => 'eloquent',
+            'model' => App\Registrar::class,
+        ],
+
+        'instructor' => [
+            'driver' => 'eloquent',
+            'model' => App\Instructor::class,
         ],
 
         // 'users' => [
@@ -94,6 +154,26 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'admin' => [
+            'provider' => 'admin',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'student' => [
+            'provider' => 'student',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'registrar' => [
+            'provider' => 'registrar',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'instructor' => [
+            'provider' => 'instructor',
             'table' => 'password_resets',
             'expire' => 60,
         ],

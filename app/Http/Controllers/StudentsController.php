@@ -8,12 +8,21 @@ use App\ComputerScience;
 use App\StudentsHistory;
 use DB;
 use App\AdmittedStudents;
+use Auth;
 
 class StudentsController extends Controller
-{
-    //students controller
+{    
+    public function __construct(){
+        $this->middleware('auth:student');
+    }
+    
     public function index(){
-        return view('portals.student.index');
+        $idnumber = Auth::user()->idnumber;
+        $fullname = StudentsHistory::where('idnumber', $idnumber)->pluck('fullname');
+        $fullname = preg_replace("/[^a-zA-Z0-9\s]/", "", $fullname);
+
+        return view('portals.student.index')
+                    ->with('fullname', $fullname);
     }
 
     public function announcement(){
@@ -34,10 +43,21 @@ class StudentsController extends Controller
         $year = preg_replace("/[^a-zA-Z0-9\s]/", "", $year);
         $semester = StudentsHistory::where('id', $id)->pluck('semester');
         $semester = preg_replace("/[^a-zA-Z0-9\s]/", "", $semester);
+
+        $idnumber = StudentsHistory::where('id', $id)->pluck('idnumber');
+        $idnumber = preg_replace("/[^a-zA-Z0-9\s]/", "", $idnumber);
+        $fullname = StudentsHistory::where('id', $id)->pluck('fullname');
+        $fullname = preg_replace("/[^a-zA-Z0-9\s]/", "", $fullname);
+
+        $department = StudentsHistory::where('fullname', $fullname)->pluck('department');
+        $department = preg_replace("/[^a-zA-Z0-9\s]/", "", $department);
+        
         // $credithr = 
         return view('portals.student.grade-report')
                     ->with('year', $year)
                     ->with('semester', $semester)
+                    ->with('idnumber', $idnumber)
+                    ->with('fullname', $fullname)
                     ->with('grades', AdmittedStudents::all());
     }
 
@@ -51,13 +71,41 @@ class StudentsController extends Controller
         $semester = StudentsHistory::where('id', $id)->pluck('semester');
         $semester = preg_replace("/[^a-zA-Z0-9\s]/", "", $semester);
 
-        $course = DB::table('computer_sciences')
+        $idnumber = Auth::user()->idnumber;
+        $department = StudentsHistory::where('idnumber', $idnumber)->pluck('department');
+        $department = preg_replace("/[^a-zA-Z0-9\s]/", "", $department);
+
+        switch ($department) {
+            case 'Computer Science':
+                $dept = 'computer_sciences';
+                break;
+            case 'Accounting and Finance':
+                //
+                break;
+            case 'Economics':
+                $dept = 'economics';
+                break;
+                break;
+            case 'Nursing':
+                //
+                break;
+            case 'Pharmacy':
+                //
+                break;
+            
+            default:
+                //
+                break;
+        }
+
+        $course = DB::table($dept)
                         ->where('year', '=', $year)
                         ->where('semester', '=', $semester)->get();
 
         return view('portals.student.register')
                     ->with('courses', $course)
-                    ->with('id', $id);
+                    ->with('id', $id)
+                    ->with('idnumber', $idnumber);
     }
 
     public function registerCourse(Request $request, $id){

@@ -71,23 +71,23 @@
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/portals/registrar/login') }}">Login as Registrar</a>
+                        <a href="{{ url('/portals/student/login') }}">Login as Student</a>
+                        <a href="{{ url('/login') }}">Login as Instruct</a>
                         <a href="{{ url('/register') }}">Register</a>
                     @endif
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                    <div class="panel">
+                        @component('components.who')
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                        @endcomponent
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>

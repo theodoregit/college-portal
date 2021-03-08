@@ -16,9 +16,10 @@ class CreateStudentAccountsTable extends Migration
         Schema::create('student_accounts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('fullname');
-            $table->string('idnumber');
+            $table->string('idnumber')->unique();
             $table->string('department');
             $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

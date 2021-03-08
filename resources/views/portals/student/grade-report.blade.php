@@ -5,7 +5,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Grade Report</div>                    
                 <div class="panel-body">
-                    <div style="background-color: #f5f8fa">   
+                    <div style="background-color: #f5f8fa"> 
+                        <p>{{$fullname}}</p>
+                        <p>{{$idnumber}}</p>  
                         <p><u><strong>Year: {{$year}}</strong></u></p>
                         <p><u><strong>Semester: {{$semester}}</strong></u></p>          
                         <table class="table">

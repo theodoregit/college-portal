@@ -8,9 +8,16 @@ use Session;
 use App\StudentsHistory;
 use App\StudentAccount;
 use App\Announcement;
+use App\Student;
 
 class RegistrarController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth:registrar');
+    }
+
+
     public function index(){
         return view('portals.registrar.index');
     }
@@ -74,6 +81,11 @@ class RegistrarController extends Controller
         $account = StudentAccount::create([
             'fullname' => $request->firstname . ' ' . $request->fathername . ' ' . $request->gfathername,
             'department' => $request->department,
+            'idnumber' => $idnumber,
+            'password' => bcrypt($password),
+        ]);
+
+        $accountauth = Student::create([
             'idnumber' => $idnumber,
             'password' => bcrypt($password),
         ]);

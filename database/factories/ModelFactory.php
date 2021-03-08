@@ -33,3 +33,19 @@ $factory->define(App\ComputerScience::class, function (Faker\Generator $faker){
         'credithr' => $faker->numberBetween($min = 1, $max = 6)
     ];
 });
+$factory->define(App\Economics::class, function (Faker\Generator $faker){
+    return [
+        'coursename' => $faker->word,
+        'coursenumber' => $faker->word,
+        'year' => $faker->numberBetween($min = 1, $max = 7),
+        'semester' => $faker->numberBetween($min = 1, $max = 3),
+        'credithr' => $faker->numberBetween($min = 1, $max = 6)
+    ];
+});
+
+$factory->define(App\Student::class, function (Faker\Generator $faker){
+    return [
+        'idnumber' => $faker->word,
+        'password' => $faker->word,
+    ];
+});
